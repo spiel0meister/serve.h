@@ -8,8 +8,10 @@
 
 int main(void) {
     Net sock = {0};
-    if (!netsocket_bind(&sock, ipv4_from_cstr("0.0.0.0"), 8080)) return 1;
+    if (!netsocket_bind(&sock, ipv4_from_cstr("127.0.0.1"), 8080)) return 1;
     if (!netsocket_listen(&sock, 1)) return 1;
+
+    printf("Listening on "IPv4_FMT"\n", IPv4_F(sock.addr));
 
     bool should_exit = false;
     while (1) {

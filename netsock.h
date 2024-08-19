@@ -21,7 +21,7 @@ typedef struct {
 }Net;
 
 #define IPv4_FMT "%d.%d.%d.%d"
-#define IPv4_F(ipv4) (ipv4).as_parts.a, (ipv4).as_parts.b, (ipv4).as_parts.c, (ipv4).as_parts.d
+#define IPv4_F(ipv4) (ipv4).as_parts.d, (ipv4).as_parts.c, (ipv4).as_parts.b, (ipv4).as_parts.a
 
 IPv4Addr ipv4_from_cstr(const char* cstr);
 

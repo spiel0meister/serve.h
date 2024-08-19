@@ -184,6 +184,7 @@ void serve_header_append(ServeHeader* headers, char* name, size_t name_len, char
 }
 
 void serve_header_free(ServeHeader* headers) {
+    if (headers == NULL) return;
     if (headers->next != NULL) serve_header_free(headers->next);
     SERVE_FREE(headers);
 }
